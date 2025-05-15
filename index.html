@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gazi Jarin</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preload" href="fonts/Calibre-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/Calibre-Medium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/Calibre-Semibold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/SFMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/SFMono-Medium.woff2" as="font" type="font/woff2" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
+</head>
+<body>
+    <!-- Page Transition -->
+    <div class="page-transition"></div>
+
+    <!-- Background Animation -->
+    <div class="bg-animation">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+    </div>
+    
+    <!-- Navigation -->
+    <header>
+        <div class="container">
+            <a href="#" class="logo">Ouchene M.Lamine</a>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                </ul>
+            </nav>
+            <div class="social-links">
+                <a href="mailto:ouchenminou14@gmail.com" target="_blank"><i class="far fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/ouchen-mohamed-lamine" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/OCHMOHA" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank"><i class="fas fa-pencil-alt"></i></a>
+            </div>
+            <div class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+        </ul>
+        <div class="social-links">
+            <a href="mailto:ouchenminou14@gmail.com" target="_blank"><i class="far fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/ouchen-mohamed-lamine" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/OCHMOHA" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="#" target="_blank"><i class="fas fa-pencil-alt"></i></a>
+        </div>
+    </div>
+    <div class="overlay"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div id="content">
+                <div id="intro">
+                    <div id="fractal-tree">
+                        <div class="react-p5-wrapper">
+                            <div id="canvas-container"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-content">
+                <h1>hi, <span class="highlight">mohamed</span> here.<span class="cursor" style="font-size: 60px; line-height: 0.9; display: inline-block;">|</span></h1>
+                <h2>I create stuff sometimes.</h2>
+                <p>I'm a Full-stack web developer from Algeria. I build functional websites and web applications for clients. I focus on creating clean, user-friendly interfaces while ensuring solid backend functionality.</p>
+                <a href="mailto:ouchenminou14@gmail.com" class="btn-primary" target="_blank"><i class="far fa-envelope"></i> Say hi!</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">about me</h2>
+            <div class="content-wrapper">
+                <div class="about-text">
+                    <p>I am currently a <span class="highlight">Full-stack web developer</span>, I specialize in building end-to-end web solutions as a <span class="highlight">freelancer</span>, Alongside my professional work, I am enhancing my expertise by completing a Bachelor's degree in Business Informatics at <span class="highlight">University of RUDN</span>, blending technical skills with business acumen.</p>
+                    <p>Here are some technologies I have been working with:</p>
+                    <ul class="tech-list">
+                        <li><span class="arrow">▹</span> PHP</li>
+                        <li><span class="arrow">▹</span> NEXT.js</li>
+                        <li><span class="arrow">▹</span> React.js</li>
+                        <li><span class="arrow">▹</span> C++</li>
+                        <li><span class="arrow">▹</span> JavaScript</li>
+                        <li><span class="arrow">▹</span> TypeScript</li>
+                    </ul>
+                    <p>Outside of work, I'm interested in following the developments of science. I also play a lot of video games. And go to the gym.</p>
+                </div>
+                <div class="about-image">
+                    <img alt="Profile Photo" src="assets/images/66.jpg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section">
+        <div class="container">
+            <h2 class="section-title">experience</h2>
+            <div class="experience-content">
+                <div class="company-list">
+                    <button class="company-btn active" data-target="aurora Labs">Aurora Labs</button>
+                    <button class="company-btn" data-target="nexus Digital Studios">Nexus Digital Studios</button>
+                </div>
+                <div class="job-details">
+                    <div id="aurora Labs" class="job-content active">
+                        <h3>Frontend Developer Intern <span class="highlight">@ Aurora Labs</span></h3>
+                        <p class="job-period">May 2023 - August 2023</p>
+                        <ul class="job-description">
+                            <li><span class="arrow">▹</span> Collaborated with a cross-functional team to build and maintain modern web applications using React, TypeScript, and Tailwind CSS</li>
+                            <li><span class="arrow">▹</span> Assisted in client meetings, translating business requirements into technical solutions</li>
+                            <li><span class="arrow">▹</span> Conducted code reviews and performance optimizations for better site speed and SEO</li>
+                        </ul>
+                    </div>
+                    <div id="nexus Digital Studios" class="job-content">
+                        <h3>Creative Technologist Intern <span class="highlight">@ Nexus Digital Studios</span></h3>
+                        <p class="job-period">May 2021 - August 2021</p>
+                        <ul class="job-description">
+                            <li><span class="arrow">▹</span> Developed and maintained code for client websites primarily using HTML, CSS, Sass, JavaScript, and jQuery</li>
+                            <li><span class="arrow">▹</span> Manually tested sites in various browsers and mobile devices to ensure cross-browser compatibility and responsiveness</li>
+                            <li><span class="arrow">▹</span> Collaborated with designers to implement UI/UX mockups, ensuring pixel-perfect cross-browser compatibility</li>
+                            <li><span class="arrow">▹</span> Clients included regional healthcare providers, e-commerce startups, and nonprofit organizations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2 class="section-title">projects I've built</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3 class="project-title">E-Commerce Dashboard</h3>
+                        <div class="project-description">
+                            <p>A responsive admin dashboard with real-time analytics, customizable UI themes, and comprehensive data visualization. Features interactive charts and enterprise-level UX for tracking sales, inventory, and customer metrics.</p>
+                        </div>
+                        <ul class="project-tech-list">
+                            <li>React</li>
+                            <li>Redux</li>
+                            <li>Chart.js</li>
+                            <li>Material UI</li>
+                            <li>Firebase</li>
+                        </ul>
+                    </div>
+                    <div class="project-image-slider">
+                        <div class="slider-arrow slider-arrow-left" style="display:none;"><i class="fas fa-chevron-left"></i></div>
+                        <div class="slider-images">
+                            <img class="slider-img active" src="assets/images/project1-1.png" alt="E-Commerce Dashboard Screenshot 1">
+                            <img class="slider-img" src="assets/images/project1-2.jpg" alt="E-Commerce Dashboard Screenshot 2">
+                            <img class="slider-img" src="assets/images/project1-3.jpg" alt="E-Commerce Dashboard Screenshot 3">
+                        </div>
+                        <div class="slider-arrow slider-arrow-right" style="display:none;"><i class="fas fa-chevron-right"></i></div>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3 class="project-title">Streaming Platform UI</h3>
+                        <div class="project-description">
+                            <p>A Netflix-inspired streaming platform with responsive design, content recommendation algorithm, and seamless video playback. Features category carousels, user authentication, and cross-device compatibility.</p>
+                        </div>
+                        <ul class="project-tech-list">
+                            <li>React</li>
+                            <li>Next.js</li>
+                            <li>Tailwind CSS</li>
+                            <li>Framer Motion</li>
+                            <li>AWS Amplify</li>
+                        </ul>
+                    </div>
+                    <div class="project-image-slider">
+                        <div class="slider-arrow slider-arrow-left" style="display:none;"><i class="fas fa-chevron-left"></i></div>
+                        <div class="slider-images">
+                            <img class="slider-img active" src="assets/images/project2.jpg" alt="Streaming Platform UI Screenshot 1">
+                            <img class="slider-img" src="assets/images/project2.jpg" alt="Streaming Platform UI Screenshot 2">
+                            <img class="slider-img" src="assets/images/project2.jpg" alt="Streaming Platform UI Screenshot 3">
+                        </div>
+                        <div class="slider-arrow slider-arrow-right" style="display:none;"><i class="fas fa-chevron-right"></i></div>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3 class="project-title">Real Estate Listing App</h3>
+                        <div class="project-description">
+                            <p>A modern property listing platform with interactive maps, advanced filtering, and virtual tour integration. Features property comparison tools, mortgage calculator, and real-time notifications for new listings.</p>
+                        </div>
+                        <ul class="project-tech-list">
+                            <li>Vue.js</li>
+                            <li>Vuex</li>
+                            <li>Leaflet.js</li>
+                            <li>SCSS</li>
+                            <li>Node.js</li>
+                        </ul>
+                    </div>
+                    <div class="project-image-slider">
+                        <div class="slider-arrow slider-arrow-left" style="display:none;"><i class="fas fa-chevron-left"></i></div>
+                        <div class="slider-images">
+                            <img class="slider-img active" src="assets/images/project3.jpg" alt="Real Estate Listing App Screenshot 1">
+                            <img class="slider-img" src="assets/images/project3.jpg" alt="Real Estate Listing App Screenshot 2">
+                            <img class="slider-img" src="assets/images/project3.jpg" alt="Real Estate Listing App Screenshot 3">
+                        </div>
+                        <div class="slider-arrow slider-arrow-right" style="display:none;"><i class="fas fa-chevron-right"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 
