@@ -248,14 +248,24 @@ function initMobileNavigation() {
     const overlay = document.querySelector('.overlay');
     const mobileLinks = document.querySelectorAll('.mobile-nav ul li a');
     
+    // Make sure elements exist before adding event listeners
+    if (!hamburger || !mobileNav || !overlay) {
+        console.error('Mobile navigation elements not found');
+        return;
+    }
+    
     // Toggle mobile navigation
-    hamburger.addEventListener('click', () => {
+    hamburger.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
         mobileNav.classList.toggle('active');
         overlay.classList.toggle('active');
         document.body.classList.toggle('no-scroll');
         
         // Animate hamburger menu
         hamburger.classList.toggle('active');
+        
+        console.log('Hamburger clicked, mobile nav active:', mobileNav.classList.contains('active'));
     });
     
     // Close mobile navigation when overlay is clicked
