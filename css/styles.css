@@ -379,22 +379,24 @@ body.no-scroll {
 }
 
 .mobile-nav {
-    display: none;
     position: fixed;
     top: 0;
-    right: -100%;
+    right: 0;
     width: 80%;
     max-width: 400px;
     height: 100vh;
     background-color: var(--light-navy);
     z-index: 1500;
     padding: 100px 30px 50px 30px;
-    transition: right 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transform: translateX(100%);
+    visibility: hidden;
+    transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), visibility 0.4s;
     box-shadow: -10px 0px 30px -15px var(--navy-shadow);
 }
 
 .mobile-nav.active {
-    right: 0;
+    transform: translateX(0);
+    visibility: visible;
 }
 
 .mobile-nav ul {
@@ -406,6 +408,7 @@ body.no-scroll {
 
 .mobile-nav ul li {
     text-align: center;
+    margin-bottom: 5px;
 }
 
 .mobile-nav ul li a {
@@ -413,6 +416,15 @@ body.no-scroll {
     font-size: var(--fz-lg);
     padding: 15px 0;
     width: 100%;
+    color: var(--lightest-slate);
+    font-family: var(--font-heading);
+    font-weight: var(--fw-medium);
+    letter-spacing: 0.5px;
+    text-transform: none;
+}
+
+.mobile-nav ul li a:hover {
+    color: var(--green);
 }
 
 .mobile-nav .social-links {
@@ -1144,6 +1156,8 @@ section.visible {
     
     .hamburger-menu {
         display: flex;
+        position: relative;
+        z-index: 2000;
     }
     
     .container {
@@ -1157,6 +1171,24 @@ section.visible {
     .hero {
         min-height: 100vh;
         padding-top: 100px;
+        padding-bottom: 60px;
+    }
+    
+    #content {
+        margin-bottom: 20px;
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    #fractal-tree {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+    }
+    
+    .hero-content {
+        padding: 0 10px;
     }
     
     .hero-content h1 {
@@ -1181,6 +1213,17 @@ section.visible {
     
     .content-wrapper {
         flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .about-text {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .tech-list {
+        margin: 20px auto;
     }
     
     .about-image {
@@ -1189,8 +1232,15 @@ section.visible {
         height: 250px;
     }
     
+    .about-image img {
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+    }
+    
     .experience-content {
         flex-direction: column;
+        width: 100%;
     }
     
     .company-list {
@@ -1201,6 +1251,8 @@ section.visible {
         border-bottom: 2px solid var(--lightest-navy);
         padding-bottom: 15px;
         width: 100%;
+        justify-content: flex-start;
+        -webkit-overflow-scrolling: touch;
     }
     
     .company-btn {
@@ -1211,6 +1263,7 @@ section.visible {
         padding: 10px 15px;
         font-size: 14px;
         white-space: nowrap;
+        flex-shrink: 0;
     }
     
     .company-btn.active {
@@ -1218,8 +1271,16 @@ section.visible {
         border-bottom: 2px solid var(--green);
     }
     
+    .job-details {
+        width: 100%;
+    }
+    
     .job-content h3 {
         font-size: 18px;
+    }
+    
+    .job-content {
+        text-align: left;
     }
     
     .project-description {
@@ -1238,12 +1299,31 @@ section.visible {
 }
 
 @media (max-width: 480px) {
+    .hero {
+        padding-top: 80px;
+    }
+    
+    #content {
+        margin-bottom: 10px;
+    }
+    
+    #fractal-tree {
+        width: 150px;
+        height: 150px;
+    }
+    
     .hero-content h1 {
         font-size: 2rem;
     }
     
     .hero-content h2 {
         font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+    
+    .hero-content p {
+        font-size: 0.95rem;
+        margin-bottom: 30px;
     }
     
     .btn-primary {
@@ -1252,24 +1332,42 @@ section.visible {
     }
     
     .about-image {
-        width: 200px;
-        height: 200px;
+        width: 220px;
+        height: 220px;
+        max-width: 90%;
+        margin: 30px auto 0;
     }
     
     .tech-list {
         grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+        padding-left: 0;
+    }
+    
+    .tech-list li {
+        text-align: left;
     }
     
     .project-card {
-        padding: 20px;
+        padding: 15px;
     }
     
     .project-image-slider {
         height: 240px;
     }
     
+    .project-title {
+        font-size: 20px;
+    }
+    
+    .project-description {
+        padding: 20px;
+        font-size: 0.9rem;
+    }
+    
     .project-tech-list {
-        gap: 8px;
+        gap: 6px;
+        justify-content: center;
     }
     
     .project-tech-list li {
@@ -1280,5 +1378,199 @@ section.visible {
     
     .social-links a {
         font-size: 16px;
+    }
+    
+    section {
+        padding: 60px 0;
+    }
+    
+    .container {
+        padding: 0 20px;
+    }
+    
+    .company-list {
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        justify-content: center;
+    }
+    
+    .company-btn {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+    
+    .job-period {
+        font-size: 11px;
+    }
+    
+    .job-content h3 {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+    
+    .job-description li {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 380px) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-content h2 {
+        font-size: 1.3rem;
+    }
+    
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+    
+    .btn-primary {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+    
+    .section-title {
+        font-size: 20px;
+    }
+    
+    .section-title::after {
+        width: 120px;
+    }
+    
+    .project-description {
+        padding: 15px;
+    }
+    
+    .about-image {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .job-content h3 {
+        font-size: 16px;
+    }
+    
+    .company-btn {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+    
+    #content {
+        display: none;
+    }
+    
+    .project-image-slider {
+        height: 200px;
+    }
+}
+
+/* Fix for iPhone notch */
+@supports (padding: max(0px)) {
+    .header {
+        padding-left: max(25px, env(safe-area-inset-left));
+        padding-right: max(25px, env(safe-area-inset-right));
+    }
+    
+    .container {
+        padding-left: max(25px, env(safe-area-inset-left));
+        padding-right: max(25px, env(safe-area-inset-right));
+    }
+}
+
+/* Improve touch targets for mobile */
+@media (hover: none) and (pointer: coarse) {
+    .company-btn, 
+    .btn-primary,
+    .social-links a,
+    nav ul li a {
+        min-height: 44px;
+        min-width: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* Extra small screen fixes */
+@media (max-width: 400px) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-content h2 {
+        font-size: 1.3rem;
+    }
+    
+    .btn-primary {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 20px;
+    }
+    
+    .about-image {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .slider-arrow {
+        width: 36px;
+        height: 36px;
+        font-size: 1.5rem;
+    }
+    
+    #fractal-tree {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .section-title {
+        font-size: 20px;
+    }
+    
+    .section-title::after {
+        width: 120px;
+    }
+    
+    .job-description li {
+        padding-left: 20px;
+    }
+    
+    .arrow {
+        left: 0;
+        font-size: 14px;
+    }
+    
+    .social-links a {
+        font-size: 18px;
+    }
+}
+
+/* Mobile menu specific fixes */
+@media (max-width: 768px) {
+    /* Improve mobile navigation styles for better visibility */
+    .mobile-nav ul li a {
+        padding: 20px 0;
+        font-size: 18px;
+        font-weight: 500;
+    }
+    
+    /* Make menu items more prominent */
+    .mobile-nav ul {
+        margin-top: 20px;
+    }
+    
+    /* Make the hamburger more prominent */
+    .hamburger-menu {
+        display: flex;
+    }
+    
+    /* Hide desktop nav elements */
+    nav ul, header .social-links {
+        display: none;
     }
 } 
