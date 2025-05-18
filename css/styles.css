@@ -378,6 +378,29 @@ body.no-scroll {
     overflow: hidden;
 }
 
+.close-menu-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    color: var(--green);
+    font-size: 24px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 1600;
+}
+
+.close-menu-btn:hover {
+    transform: rotate(90deg);
+    color: var(--lightest-slate);
+}
+
 .mobile-nav {
     position: fixed;
     top: 0;
